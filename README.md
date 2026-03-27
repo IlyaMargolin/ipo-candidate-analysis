@@ -40,7 +40,6 @@ ipo-candidate-analysis/
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── requirements.txt
-├── .gitignore
 ├── data/
 │   ├── sample_companies.csv
 │   └── sample_output.csv
@@ -51,11 +50,8 @@ ipo-candidate-analysis/
 │   ├── scoring.py
 │   ├── screening.py
 │   └── io_utils.py
-├── docs/
-│   └── methodology.md
-└── .github/
-    └── ISSUE_TEMPLATE/
-        └── feature_request.md
+└── docs/
+    └── methodology.md
 ```
 
 ## Core methodology
@@ -169,19 +165,3 @@ You can extend this repository in several directions:
 
 This repository is an educational and analytical framework.  
 It is **not investment advice**, **not underwriting guidance**, and **not a substitute for legal, accounting, or capital-markets diligence**.
-
-## Suggested GitHub description
-
-> A practical toolkit for screening and scoring private companies that could become future IPO candidates.
-
-## Suggested repository topics
-
-`ipo` `equity-research` `finance` `screening` `valuation` `capital-markets` `python` `jupyter` `investment-analysis`
-
-## Maintainer notes
-
-When publishing this repository, update:
-
-- the clone URL in this README;
-- your author name in `LICENSE`;
-- any sample data assumptions you want to disclose.
