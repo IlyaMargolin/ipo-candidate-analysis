@@ -1,36 +1,60 @@
-# IPO Candidate Analysis Toolkit
+# IPO Candidate Analysis
 
-A practical, research-oriented repository for screening and assessing private or pre-IPO companies that could become IPO candidates.
+A practical analytical framework for screening and scoring private companies that could become future IPO candidates.
+
+This repository demonstrates a structured approach to IPO candidate analysis. It combines a reusable notebook workflow, transparent scoring logic, and sample data to help analysts evaluate whether a private or late-stage company shows characteristics consistent with potential public-market readiness.
 
 ## What this project does
 
-This repository demonstrates a structured workflow for **IPO candidate analysis**. It is designed for analysts, students, finance learners, and builders who want a repeatable framework for evaluating companies that may eventually go public.
+The project helps users organize IPO candidate analysis into a repeatable process rather than a collection of disconnected notes.
 
-The toolkit helps users:
+It is designed to support:
 
-- organize company-level input data;
-- score businesses across core IPO-relevant dimensions;
-- compare candidates in a transparent way;
-- document assumptions clearly;
-- extend the model with new signals, sectors, and screening logic.
+- early screening of private companies;
+- comparison across multiple IPO candidates;
+- transparent scoring based on explicit criteria;
+- experimentation with custom weights and selection logic;
+- extension into more advanced research workflows.
 
-## Why this project is valuable
+## Why this project is useful
 
-Most discussions around IPO analysis focus only on valuation headlines or media narratives. In practice, early-stage IPO screening requires a broader framework:
+In practice, IPO candidate analysis is often fragmented. Information may be spread across market reports, private databases, news flow, investor materials, and internal notes. This repository offers a basic but structured framework for turning that fragmented work into a more consistent analytical process.
 
-- **Business quality** — revenue model, growth profile, margins, unit economics;
-- **Market attractiveness** — TAM, category maturity, competition, timing;
-- **IPO readiness** — governance, reporting discipline, management quality, public-market fit;
-- **Risk mapping** — concentration risk, regulation, profitability gaps, capital intensity.
+Its value comes from four elements:
 
-This repository turns that logic into a usable starting point.
+1. **Repeatability**  
+   The same workflow can be used across different company sets.
 
-It is valuable because it gives users:
+2. **Transparency**  
+   The scoring model is visible, editable, and easy to audit.
 
-1. a clear **analysis workflow** rather than random notes;
-2. a **reusable notebook** for experimentation;
-3. a **transparent scoring model** that can be explained and audited;
-4. a structure that can be improved for sectors, geographies, and data availability.
+3. **Flexibility**  
+   The framework can be adapted for sectors, geographies, or different data environments.
+
+4. **Practicality**  
+   The notebook and Python modules provide a usable starting point for real analytical work.
+
+## Core analytical logic
+
+The default workflow follows six stages:
+
+1. **Build a company universe**  
+   Create a list of private or late-stage companies to review.
+
+2. **Apply an initial screen**  
+   Filter companies using basic thresholds such as revenue growth, funding maturity, sector relevance, or scale.
+
+3. **Score IPO readiness factors**  
+   Evaluate each company across a defined set of variables such as growth, scale, profitability profile, market narrative, and strategic fit.
+
+4. **Rank candidates**  
+   Compare screened companies using a consistent total score.
+
+5. **Review outputs**  
+   Inspect ranked results and identify names that may deserve deeper research.
+
+6. **Refine the model**  
+   Adjust weights, thresholds, and input variables based on the analyst’s use case.
 
 ## Repository structure
 
@@ -40,6 +64,7 @@ ipo-candidate-analysis/
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── requirements.txt
+├── .gitignore
 ├── data/
 │   ├── sample_companies.csv
 │   └── sample_output.csv
@@ -52,116 +77,76 @@ ipo-candidate-analysis/
 │   └── io_utils.py
 └── docs/
     └── methodology.md
-```
-
-## Core methodology
-
-The default workflow follows six stages:
-
-1. **Build a company universe**  
-   Create a list of private or late-stage companies you want to screen.
-
-2. **Collect key indicators**  
-   Typical indicators may include revenue growth, gross margin, market size, profitability trend, funding profile, governance readiness, and sector-specific metrics.
-
-3. **Normalize the signals**  
-   Convert mixed raw inputs into comparable scales.
-
-4. **Apply a scoring model**  
-   Combine weighted dimensions such as growth, quality, market, readiness, and risk.
-
-5. **Rank the candidates**  
-   Compare total scores and identify the strongest potential IPO candidates.
-
-6. **Interpret the results**  
-   Use the score as a decision-support layer, not as a substitute for full diligence.
-
-## Quick start
-
-### Option 1: Google Colab
-
-1. Open `notebooks/IPO_Analysis_Workflow.ipynb` in Google Colab.
-2. Upload the repository files or mount Google Drive.
-3. Install dependencies:
-   ```python
-   !pip install -r requirements.txt
-   ```
-4. Adjust the input file path if needed.
-5. Run the notebook from top to bottom.
-
-### Option 2: Local Jupyter
-
-```bash
-git clone <your-repository-url>
-cd ipo-candidate-analysis
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-jupyter notebook
-```
-
-Then open:
-
-```text
+Main components
 notebooks/IPO_Analysis_Workflow.ipynb
-```
-
-## Input data format
-
-The sample workflow expects a CSV file with columns similar to:
-
-- `company_name`
-- `sector`
-- `revenue_growth_pct`
-- `gross_margin_pct`
-- `ebitda_margin_pct`
-- `market_size_score`
-- `governance_score`
-- `profitability_trend_score`
-- `capital_intensity_score`
-- `regulatory_risk_score`
-
-You can modify the schema to match your own research model.
-
-## Output
-
-The workflow produces a ranked table with:
-
-- component scores by dimension;
-- weighted total score;
-- optional flags for key weaknesses;
-- exportable CSV output for reporting or further modeling.
-
-## How to improve the project
-
-You can extend this repository in several directions:
-
-### 1. Improve the screening universe
-- add sector-specific watchlists;
-- use APIs or databases for structured company discovery;
-- separate private, venture-backed, and spinout candidates.
-
-### 2. Improve the scoring logic
-- introduce dynamic weights by industry;
-- use percentile normalization instead of fixed rules;
-- add scenario-based scoring for bullish/base/bear cases.
-
-### 3. Improve the risk framework
-- add customer concentration risk;
-- add regulatory exposure by geography;
-- add founder dependency and governance red flags.
-
-### 4. Improve the technical architecture
-- package the code into a small Python module;
-- add tests;
-- connect the model to a dashboard or Streamlit interface.
-
-### 5. Improve the research layer
-- include memo templates;
-- attach evidence links by company;
-- track update dates and analyst comments.
-
-## Important usage note
-
-This repository is an educational and analytical framework.  
-It is **not investment advice**, **not underwriting guidance**, and **not a substitute for legal, accounting, or capital-markets diligence**.
+A notebook-based workflow for running the analysis step by step in Google Colab or Jupyter.
+src/screening.py
+Initial filtering logic for narrowing the company universe.
+src/scoring.py
+Core scoring functions used to evaluate and rank companies.
+src/io_utils.py
+Utilities for loading inputs and saving outputs.
+docs/methodology.md
+A written explanation of the analytical framework and scoring assumptions.
+data/sample_companies.csv
+Example input data for testing the workflow.
+data/sample_output.csv
+Example output generated by the model.
+Quick start
+Option 1: Google Colab
+Upload the repository files to your Google Drive, or upload the notebook and supporting files manually.
+Open notebooks/IPO_Analysis_Workflow.ipynb in Google Colab.
+Make sure the sample data and source files are accessible from the notebook environment.
+Run the notebook cells in sequence.
+Review the generated ranking output.
+Option 2: Local Jupyter environment
+Clone the repository:
+git clone https://github.com/YOUR_USERNAME/ipo-candidate-analysis.git
+cd ipo-candidate-analysis
+Install dependencies:
+pip install -r requirements.txt
+Launch Jupyter:
+jupyter notebook
+Open:
+notebooks/IPO_Analysis_Workflow.ipynb
+Run the notebook cells in order.
+Input data expectations
+The framework assumes that each company record contains at least a basic set of fields relevant to screening and scoring.
+Typical examples include:
+company name;
+sector;
+revenue growth;
+funding stage;
+profitability status;
+market attractiveness;
+strategic positioning.
+The exact schema can be extended depending on the analytical objective.
+Output
+The expected output is a ranked table of companies with screening results and composite scores.
+This output can be used to:
+identify companies for deeper research;
+compare candidates on a common basis;
+test alternative weighting approaches;
+support internal analytical discussion.
+How to improve this framework
+This repository is intentionally simple as a starting point. It can be strengthened in several directions:
+add sector-specific scoring models;
+introduce geography-specific IPO factors;
+include valuation or comps-based modules;
+add qualitative red-flag indicators;
+integrate external APIs or databases;
+create a Streamlit dashboard for interactive use;
+add unit tests and configuration files;
+support multiple scoring profiles for different analyst objectives.
+Suggested use cases
+This repository may be useful for:
+finance and markets students;
+equity research learners;
+IPO watchlist builders;
+startup ecosystem analysts;
+independent analysts building public portfolios;
+teams prototyping internal screening tools.
+Important usage note
+This repository is an educational and analytical framework.
+It is not investment advice, underwriting guidance, legal advice, accounting advice, or a substitute for full capital-markets diligence.
+Any real IPO assessment requires deeper company-specific, market-specific, legal, and financial analysis.
