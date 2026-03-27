@@ -1,0 +1,6 @@
+company_name,sector,revenue_growth_pct,gross_margin_pct,ebitda_margin_pct,market_size_score,governance_score,profitability_trend_score,capital_intensity_score,regulatory_risk_score,growth_score,quality_score,market_score,readiness_score,risk_score,total_score
+Alpha Cloud,Enterprise Software,42,78,12,9,8,7,3,2,4.2,7.4,9,8,7.5,7.135
+Vector Payments,Fintech,36,71,9,9,7,6,4,5,3.6,6.55,9,7,5.5,6.3775
+Quantum Retail OS,Retail SaaS,24,68,6,7,7,6,3,3,2.4,6.4,7,7,7.0,5.955
+Nova HealthTech,HealthTech,31,64,-4,8,6,5,5,6,3.1,5.7,8,6,4.5,5.8
+Orbit Logistics,Logistics Tech,18,29,3,7,5,4,7,4,1.8,3.45,7,5,4.5,4.5175
